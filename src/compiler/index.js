@@ -17,6 +17,7 @@ export const createCompiler = createCompilerCreator(function baseCompile (
     optimize(ast, options)
   }
   const code = generate(ast, options)
+  console.log("asdasd")
   return {
     ast,
     render: code.render,
