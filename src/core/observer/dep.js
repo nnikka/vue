@@ -29,6 +29,8 @@ export default class Dep {
   }
 
   depend () {
+    console.log("depend")
+    console.log(Dep.target)
     if (Dep.target) {
       Dep.target.addDep(this)
     }
@@ -36,6 +38,7 @@ export default class Dep {
 
   notify () {
     // stabilize the subscriber list first
+    console.log("notify")
     const subs = this.subs.slice()
     if (process.env.NODE_ENV !== 'production' && !config.async) {
       // subs aren't sorted in scheduler if not running async
